@@ -1,0 +1,49 @@
+<h2>Add task</h2>
+<ul class="breadcrumb">
+  <li><a href="#/task">Tasks</a> <span class="divider">/</span></li>
+  <li class="active">Edit</li>
+</ul>
+<div class="alert alert-error" ng-show="error == 'auth'">Authentication required. Click <a href="#/login">here</a> to login.</div>
+<form class="form-horizontal" method="post" style="width: 500px; margin: 50px auto;" ng-submit="submit()">
+  <div class="control-group">
+    <label class="control-label" for="inputText">Task</label>
+    <div class="controls">
+      <input type="text" id="inputText" name="text" placeholder="Task" ng-model="task.text" required="required">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputDue_date">Due date</label>
+    <div class="controls">
+      <div class="input-append date" datepicker>
+        <input style="width: 179px;" size="16" type="text" value="" id="inputDue_date" required="required" ng-model="task.due_date" name="due_date"><span class="add-on"><i class="icon-th"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPriority">Priority</label>
+    <div class="controls">
+      <select name="priority" ng-model="task.priority">
+        <option value="0">Low</option>
+        <option value="1">Average</option>
+        <option value="2">High</option>
+        <option value="3">Urgent</option>
+      </select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputCompleted">Is completed</label>
+    <div class="controls">
+      <input type="checkbox" id="inputCompleted" name="completed" value="1" ng-model="task.completed" ng-true-value="1" ng-false-value="0">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary" value="1" ng-click="setReturnMarker()" ng-hide="task.id">Add and Return</button>
+      <button type="submit" class="btn" value="0" ng-hide="task.id">Add and add another</button>
+      
+      <button type="submit" class="btn btn-primary" value="1" ng-click="setReturnMarker()" ng-show="task.id">Save</button>
+      <a class="btn" ng-show="task.id" href="#/task">Return</a>
+      <button type="button" class="btn btn-danger" value="0" ng-show="task.id" ng-click="remove()">Delete</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+<h2>Register</h2>
+<ul class="breadcrumb">
+  <li><a href="#">Home</a> <span class="divider">/</span></li>
+  <li class="active">Register</li>
+</ul>
+<form class="form-horizontal" method="post" ng-submit="submit()">
+  <div class="alert alert-error" ng-show="error">Error creating user (Probably it already exists)</div>
+  <div class="alert alert-success" ng-show="success">User created successfully! <br />Click <a href="#/task">here</a> to manage tasks.</div>
+  <div class="control-group">
+    <label class="control-label" for="inputName">Your Name</label>
+    <div class="controls">
+      <input type="text" name="login" id="inputName" placeholder="Your Name" ng-model="user.name" required="required">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputLogin">Login</label>
+    <div class="controls">
+      <input type="text" name="login" id="inputLogin" placeholder="Login" ng-model="user.login" required="required">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+      <input type="password" name="password" id="inputPassword" placeholder="Password" ng-model="user.password" required="required">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn">Register</button>
+      &nbsp;<a href="#/login">Have account? Login</a>
+    </div>
+  </div>
+</form>

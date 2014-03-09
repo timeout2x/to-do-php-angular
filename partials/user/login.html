@@ -1,0 +1,26 @@
+<h2>Login</h2>
+<ul class="breadcrumb">
+  <li><a href="#">Home</a> <span class="divider">/</span></li>
+  <li class="active">Login</li>
+</ul>
+<form class="form-horizontal" method="post" ng-submit="submit()">
+  <div class="alert alert-error" ng-show="error">Error logging in</div>
+  <div class="control-group">
+    <label class="control-label" for="inputLogin">Login</label>
+    <div class="controls">
+      <input type="text" name="login" id="inputLogin" placeholder="Login" ng-model="user.login" required="required">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+      <input type="password" name="password" id="inputPassword" placeholder="Password" ng-model="user.password" required="required">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn">Sign in</button>
+      &nbsp;<a href="#/register">or Register</a>
+    </div>
+  </div>
+</form>

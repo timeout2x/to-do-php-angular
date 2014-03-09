@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en" ng-app="todoList">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>                                                      
+<body>
+
+<div class="navbar" ng-controller="header">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#" ng-show="!currentUser.name">Simple Todo Demo</a>
+      <a class="brand" href="#/task" ng-show="currentUser.name">Simple Todo Demo</a>
+      <ul class="nav pull-right" ng-show="!currentUser.name">
+        <li><a href="#/login">Login</a></li>
+        <li><a href="#/register">Register</a></li>
+      </ul>
+      <ul class="nav" ng-show="currentUser.name">
+        <li><a href="#/task">Tasks</a></li>
+      </ul>
+      <ul class="nav pull-right" ng-show="currentUser.name">
+        <li><a>Welcome {{ currentUser.name }}</a></li>
+        <li><a href="#/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="container">
+  
+  <div class="content">
+    
+    <div ng-view></div>
+    
+  </div>
+  
+  <footer>
+
+  </footer>
+</div> 
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js" ng:autobind></script>
+<script src="//code.angularjs.org/1.1.5/angular-resource.min.js" ng:autobind></script>
+<script src="//code.angularjs.org/1.1.5/angular-cookies.min.js" ng:autobind></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+                                             
+<script src="js/app.js"></script>                  
+<script src="js/user.js"></script>
+<script src="js/task.js"></script>
+
+</body>
+
+</html>
